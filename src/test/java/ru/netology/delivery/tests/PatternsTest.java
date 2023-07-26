@@ -23,7 +23,7 @@ public class PatternsTest {
 
         orderCard(city, name, phone);
         String date1 = $("[data-test-id='date'] .input__control").getValue();
-        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date1)).toString();
+        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date1));
 
         refresh();
 
@@ -35,7 +35,7 @@ public class PatternsTest {
 
         $("[data-test-id='replan-notification'] button").click();
         String date2 = $("[data-test-id='date'] .input__control").getValue();
-        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date2)).toString();
+        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date2));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class PatternsTest {
         orderCard(city, name, phone);
 
         String date1 = $("[data-test-id='date'] .input__control").getValue();
-        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date1)).toString();
+        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date1));
 
         refresh();
 
@@ -62,7 +62,7 @@ public class PatternsTest {
                 Duration.ofSeconds(10));
         $("[data-test-id='replan-notification']").shouldBe(Condition.hidden);
         String date2 = $("[data-test-id='date'] .input__control").getValue();
-        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date2)).toString();
+        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date2));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class PatternsTest {
 
         orderCard(city, name, phone);
         String date1 = $("[data-test-id='date'] .input__control").getValue();
-        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date1)).toString();
+        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date1));
 
         $("[type='button'].button").click();
 
@@ -88,7 +88,7 @@ public class PatternsTest {
         $("[data-test-id='success-notification'] .notification__content").shouldHave(Condition.partialText("Встреча успешно запланирована на "),
                 Duration.ofSeconds(10));
         String date2 = $("[data-test-id='date'] .input__control").getValue();
-        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date2)).toString();
+        $("[data-test-id='success-notification'] .notification__content").shouldBe(Condition.partialText(date2));
     }
 
     @Test
