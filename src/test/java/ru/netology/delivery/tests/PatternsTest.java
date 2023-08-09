@@ -1,6 +1,10 @@
 package ru.netology.delivery.tests;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -22,6 +26,16 @@ public class PatternsTest {
         $("[data-test-id='phone'] .input__control").setValue(phone);
         $("[data-test-id='agreement']").click();
         $("[type='button'].button").click();
+    }
+
+    @BeforeAll
+    public static void setupAllure() {
+        SelenideLogger.addListener("Allure", new AllureSelenide());
+    }
+
+    @AfterAll
+    public static void removeAllure() {
+        SelenideLogger.removeListener("Allure");
     }
 
     @Test
